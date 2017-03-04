@@ -142,7 +142,7 @@ const toPower = (number, exponent=2) => number ** exponent; //double star ES6
 // using rest parameters, write a function named evenOdd that takes in
 // any number of parameters and returns an object with two properties - even and odd.
 // this function should check each parameter and push it to the appropriate property.
-evenOdd(...params) {
+const evenOdd = (...params) => {
 	let newObj = {even:[], odd:[]};
 	params.forEach((number) => {
 		if(number % 2 === 0) {
@@ -154,19 +154,22 @@ evenOdd(...params) {
 	})
 }
 
-
 // write a function named multiply that takes in a num parameter and an arbitrary amount of
 // additional numbers. This function should return an array of each additional number
 // multiplied by num.
+const multi = (multiplier, ...numbers) => {
+  return numbers.map(n => n * multiplier);
+}
 
-
+console.log(multi(3, 1,2,3,4,5,6));
 
 // do not modify
 const bits = [ 2, 4, 8, 16, 32, 64, 128 ];
 
 // using an arrow function and the built in .map method, create a new array
 // named mooresBits. mooresBits should be the bits array doubled.
-
+const mooresBits = (numbers) => numbers.map(n => n * 2);
+mooresBits(bits);
 
 // do not modify
 const that = {
